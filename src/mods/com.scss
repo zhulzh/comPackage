@@ -1,0 +1,491 @@
+/*
+cyan.common.scss v0.9.2
+(c) 2016 zlz
+Released under the MIT License.
+*/
+
+$nums: (2, 5, 8, 10, 15, 20, 30, 50, 70, 100),  (8, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26, 30, 32, 36, 48, 60, 72, 96);
+$base-font-size: 16;
+$color: #fff, #333, #666, #999;
+html {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+blockquote,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+select,
+td,
+textarea,
+th,
+ul {
+    padding: 0;
+    margin: 0;
+    font-family: 'Microsoft Yahei', PingHei, Roboto, 'Heiti SC Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: inherit;
+}
+@-ms-viewport {
+    width: device-width;
+}
+body {
+    background: nth($color, 1);
+    font-size: #{$base-font-size}px;
+    text-align: center;
+}
+a {
+    background-color: transparent;
+    text-decoration: none;
+    &:active,
+    &:hover,
+    &:focus {
+        border: 0;
+        outline: 0;
+    }
+}
+img,
+a:active,
+a:hover {
+    border: 0;
+    outline: 0;
+}
+input[type='text'],
+input[type='button'],
+input[type='submit'],
+button,
+textarea,
+img {
+    outline: 0;
+    vertical-align: middle;
+}
+input:focus,
+textarea:focus {
+    outline: 0;
+}
+a,
+button,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+div,
+td,
+th {
+    line-height: inherit;
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+li {
+    list-style-type: none;
+}
+.bg-white {
+    background-color: nth($color, 1);
+}
+.butn {
+    display: inline-block;
+    padding: .5em 1.5em;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 100%;
+    outline: 0;
+    text-align: center;
+    white-space: nowrap;
+    &:active,
+    &.active {
+        border: 0;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .15) inset, 0 0 6px rgba(0, 0, 0, .2) inset;
+    }
+    &:focus {
+        border: 0;
+        outline: 0;
+    }
+    &[disabled],
+    &.disabled {
+        background: #eee;
+        color: #ccc;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+.butn-xs {
+    font-size: 70%;
+}
+.butn-sm {
+    font-size: 85%;
+}
+.butn-lg {
+    font-size: 110%;
+}
+.butn-xl {
+    font-size: 125%;
+}
+.w-50 {
+    width: 50px;
+    @extend .ibvm;
+}
+.w-80 {
+    width: 80px;
+    @extend .ibvm;
+}
+.w-100 {
+    width: 100px;
+    @extend .ibvm;
+}
+.w-120 {
+    width: 120px;
+    @extend .ibvm;
+}
+.w-140 {
+    width: 140px;
+    @extend .ibvm;
+}
+.w-500 {
+    width: 500px;
+    @extend .ibvm;
+}
+.w-1000 {
+    width: 1000px;
+    @extend .center-block;
+}
+.w-1140 {
+    width: 1140px;
+    @extend .center-block;
+}
+.w-per50 {
+    width: 50%;
+}
+.hr1 {
+    height: 0;
+    border: none;
+    border-bottom: 1px dashed #ddd;
+    font-size: 0;
+}
+.ib {
+    display: inline-block !important;
+}
+.vm {
+    vertical-align: middle !important;
+}
+.vt {
+    vertical-align: top !important;
+}
+.ibvm {
+    @extend .ib;
+    @extend .vm;
+}
+.relative {
+    position: relative;
+}
+.abs {
+    position: absolute;
+}
+.lh-1 {
+    line-height: 1;
+}
+.lh-12 {
+    line-height: 1.2;
+}
+.lh-15 {
+    line-height: 1.5;
+}
+.lh-17 {
+    line-height: 1.7;
+}
+.lh-2 {
+    line-height: 2;
+}
+.lh-3 {
+    line-height: 3;
+}
+.cur {
+    cursor: pointer;
+}
+.b {
+    font-weight: 700;
+}
+.nb {
+    font-weight: 400;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-nowrap {
+    white-space: nowrap;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+.elps {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.clamp {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.sizing {
+    box-sizing: border-box;
+}
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
+}
+.hide {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+.invisible {
+    visibility: hidden;
+}
+.text-hide {
+    border: 0;
+    background-color: transparent;
+    color: transparent;
+    font: 0/0 a;
+    text-shadow: none;
+}
+.affix {
+    position: fixed;
+}
+.tb {
+    display: table;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    td,
+    th {
+        line-height: 1.7;
+    }
+}
+.red,
+a.red {
+    color: #c00 !important;
+}
+.orange,
+a.orange {
+    color: #f18d05 !important;
+}
+.yellow,
+a.yellow {
+    color: #ff0 !important;
+}
+.blue,
+a.blue {
+    color: #00a1cb !important;
+}
+.green,
+a.green {
+    color: #7db500 !important;
+}
+.purple,
+a.purple {
+    color: #87318c !important;
+}
+.black,
+a.black {
+    color: #000 !important;
+}
+.grey3,
+a.grey3 {
+    color: #333 !important;
+}
+.grey45,
+a.grey45 {
+    color: #454545 !important;
+}
+.grey6,
+a.grey6 {
+    color: #666 !important;
+}
+.dimgrey,
+a.dimgrey {
+    color: #696969 !important;
+}
+.grey80,
+a.grey80 {
+    color: #808080 !important;
+}
+.grey8e,
+a.grey8e {
+    color: #8e8e8e !important;
+}
+.grey9,
+a.grey9 {
+    color: #999 !important;
+}
+.darkgrey,
+a.darkgrey {
+    color: #a9a9a9 !important;
+}
+.aaa,
+a.aaa {
+    color: #aaa !important;
+}
+.bbb,
+a.bbb {
+    color: #bbb !important;
+}
+.grey,
+a.grey {
+    color: #bebebe !important;
+}
+.silver,
+a.silver {
+    color: #c0c0c0 !important;
+}
+.ccc,
+a.ccc {
+    color: #ccc !important;
+}
+.lightgrey,
+a.lightgrey {
+    color: #d3d3d3 !important;
+}
+.ddd,
+a.ddd {
+    color: #ddd !important;
+}
+.eee,
+a.eee {
+    color: #eee !important;
+}
+.white,
+a.white {
+    color: nth($color, 1) !important;
+}
+@each $num in nth($nums, 2) {
+    .px-#{$num} {
+        font-size: #{$num}px !important;
+    }
+    .em-#{$num} {
+        font-size: ($num / $base-font-size * 1em) !important;
+    }
+    .rem-#{$num} {
+        font-size: ($num / $base-font-size * 1rem) !important;
+    }
+}
+@each $num in nth($nums, 1) {
+    .pd-l-#{$num} {
+        padding-left: #{$num}px !important;
+    }
+    .pd-r-#{$num} {
+        padding-right: #{$num}px !important;
+    }
+    .pd-t-#{$num} {
+        padding-top: #{$num}px !important;
+    }
+    .pd-b-#{$num} {
+        padding-bottom: #{$num}px !important;
+    }
+    .pd-lr-#{$num} {
+        @extend .pd-l-#{$num};
+        @extend .pd-r-#{$num};
+    }
+    .pd-tb-#{$num} {
+        @extend .pd-t-#{$num};
+        @extend .pd-b-#{$num};
+    }
+    .pd-#{$num} {
+        @extend .pd-lr-#{$num};
+        @extend .pd-tb-#{$num};
+    }
+    .mg-l-#{$num} {
+        margin-left: #{$num}px !important;
+    }
+    .mg-r-#{$num} {
+        margin-right: #{$num}px !important;
+    }
+    .mg-t-#{$num} {
+        margin-top: #{$num}px !important;
+    }
+    .mg-b-#{$num} {
+        margin-bottom: #{$num}px !important;
+    }
+    .mg-lr-#{$num} {
+        @extend .mg-l-#{$num};
+        @extend .mg-r-#{$num};
+    }
+    .mg-tb-#{$num} {
+        @extend .mg-t-#{$num};
+        @extend .mg-b-#{$num};
+    }
+    .mg-#{$num} {
+        @extend .mg-lr-#{$num};
+        @extend .mg-tb-#{$num};
+    }
+}
+.clear,
+.elps {
+    zoom: 1;
+    &::after,
+    &::before {
+        display: table;
+        content: '';
+    }
+    &::after {
+        clear: both;
+    }
+}
+.clearfix {
+    overflow: hidden;
+    zoom: 1;
+}
